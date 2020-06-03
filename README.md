@@ -1,2 +1,2 @@
 # Lee Gang Uk    (2020XXXX)
-# Kookmin Univ. SW
+# Kookmin Univ. Computer Science

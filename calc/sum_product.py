@@ -7,13 +7,15 @@ def application(environ, start_response):
 	b = d.get('b', [''])[0]
 	response_body = html
 	try:
-		a, b = int(a), int(b)
 		response_body = response_body.split('\n')
+		a, b = int(a), int(b)
 		response_body[8] += str(a+b)
 		response_body[9] += str(a*b)
 		response_body = '\n'.join(response_body)
+			
 	except:
-		pass
+		if a == '': response_body[3] = response_body[3][:-8] + ' a is empty.' + '<br><br>'
+		if b == '': response_body[4] = response_body[4][:-8] + ' b is empty.' + '<br><br>'
 
 	start_response('200 OK', [
 		('Content-Type', 'text/html'),
